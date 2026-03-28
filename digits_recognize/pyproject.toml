@@ -1,0 +1,16 @@
+[project]
+name = "digits-recognize"
+version = "0.1.0"
+description = "Kaggle Digit Recognizer competition"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+digits-recognize = "digits_recognize.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/digits_recognize"]

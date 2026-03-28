@@ -1,0 +1,19 @@
+version = 1
+revision = 3
+requires-python = ">=3.14"
+
+[manifest]
+members = [
+    "digits-recognize",
+    "kaggle",
+]
+
+[[package]]
+name = "digits-recognize"
+version = "0.1.0"
+source = { editable = "digits_recognize" }
+
+[[package]]
+name = "kaggle"
+version = "0.1.0"
+source = { virtual = "." }
