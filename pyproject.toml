@@ -3,11 +3,39 @@ name = "kaggle"
 version = "0.1.0"
 description = "Kaggle competitions workspace"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.13"
 dependencies = [
     "matplotlib>=3.10.8",
     "numpy>=2.4.4",
+    "pillow==12.2.0",
+    "ruff==0.15.9",
+    "torch>=2.11.0",
+    "torchvision>=0.26.0",
+    "triton-rocm>=3",
+    "ty==0.0.28",
 ]
 
 [tool.uv.workspace]
 members = ["digits_recognize", "*"]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-rocm" },
+]
+torchvision = [
+    { index = "pytorch-rocm" },
+]
+triton-rocm = [
+    { index = "pytorch-rocm" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-rocm"
+url = "https://download.pytorch.org/whl/rocm7.2"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.8",
+    "ty>=0.0.26",
+]
